@@ -1,10 +1,10 @@
 module.exports.config = {
 	name: "package",
 	version: "1.0.1", 
-	hasPermssion: 2,
-	credits: "Choru for package", //don't change the credits please
+	hasPermssion: 0,
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭", //don't change the credits please
 	description: ".",
-	commandCategory: "bible verse",
+	commandCategory: "system",
 	cooldowns: 1,
 	dependencies: 
 	{
@@ -17,41 +17,41 @@ module.exports.run = async function({ api,event,args,client,Users,Threads,__GLOB
 const axios = global.nodemodule["axios"];
 const request = global.nodemodule["request"];
 const fs = global.nodemodule["fs-extra"];
-var link = ["https://i.imgur.com/UVABL3p.jpg"];
+var link = ["https://i.imgur.com/6UxTLqh.png"];
 var callback = () => api.sendMessage({body:`
 {
-	"name": "Arun",
-	"version": "9.9.3",
-	"description": "A simple Facebook Messenger Bot made by me(CatalizCS) and my brother SpermLord don't forget miraiproject.",
-	"main": "mirai.js",
+	"name": "Priyansh",
+	"version": "30.0.0",
+	"description": "A simple Facebook Messenger Bot made by 𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭.",
+	"main": "Priyansh.js",
 	"scripts": {
-		"start": "pm2 kill && pm2 start index.js -i 1 --no-daemon",
+		"start": "node index.js",
 		"login": "node login",
 		"test": "node --trace-warnings --use_strict --async-stack-traces mirai"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ChoruTiktokers182/Choru-bypass/issues"
+		"url": "https://github.com/priyanshu192/fb-bot/issues"
 	},
 	"keywords": [
 		"bot",
 		"facebook",
-		"projectmirai",
+		"projectpriyansh",
 		"messenger",
-		"mirai",
-		"catalizcs",
-		"spermlord",
-		"miraipr0ject"
+		"javasvript",
+		"priyanshu",
+		"prince",
+		"mental"
 	],
-	"author": "Choru TikTokers",
+	"author": "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	"license": "GPL-3.0",
 	"bugs": {
-		"url": "https://github.com/ChoruTiktokers182/Choru-bypass/issues"
+		"url": "https://github.com/priyanshu192/fb-bot/issues"
 	},
-	"homepage": "https://github.com/ChoruTiktokers182/Choru-bypass/issues",
+	"homepage": "https://github.com/priyanshu192/fb-bot/issues",
 	"dependencies": {
 		"@maihuybao/fca-unofficial": "^1.3.13-2",
-		"@miraipr0ject/assets": "",
+		"@priyanshproject/assets": "",
 		"@replit/database": "^2.0.1",
 		"@supercharge/strings": "^1.28.0",
 		"akaneko": "^5.2.2",
@@ -74,7 +74,7 @@ var callback = () => api.sendMessage({body:`
 		"fca-disme": "^2.3.0",
 		"fca-horizon-remake": "^20.0.6",
 		"fca-kaneki": "^1.2.9",
-		"fca-noder": "git+https://github.com/KurumiDevz/fca-noder.git",
+		"fca-noder": "git+https://github.com/Priyanshu192/fca-noder.git",
 		"fca-sus": "^1.1.7",
 		"fca-unofficial": "^1.3.10",
 		"fca-unofficial-force": "^10.3.13",
@@ -114,6 +114,6 @@ var callback = () => api.sendMessage({body:`
 		"ytdl-core": "^4.11.0",
 		"zalgo": "0.0.1"
 	}
-}.`,attachment: fs.createReadStream(__dirname + "/cache/ken.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/ken.jpg")); 
-      return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/ken.jpg")).on("close",() => callback());
+}.`,attachment: fs.createReadStream(__dirname + "/cache/ken.png")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/ken.png")); 
+      return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/ken.png")).on("close",() => callback());
    };

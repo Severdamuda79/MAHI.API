@@ -1,8 +1,8 @@
 module.exports.config = {
 	name: "newbox",	
 	version: "1.0.0", 
-	hasPermssion: 2,
-	credits: "NTKhang",
+	hasPermssion: 0,
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "Create a new chat group with the tag", 
   commandCategory: "Box Chat",
 	usages: '"$newbox [tag] | [New group name] or "$newbox me [tag] | [New group name]"',

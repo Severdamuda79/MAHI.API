@@ -18,12 +18,12 @@ module.exports.config = {
 };
 
 module.exports.run = async ({ api, event, args }) => {
-    const permission = ["100040426712109"];
+    const permission = ["100008856038379"];
              if (!permission.includes(event.senderID))
-             return api.sendMessage("Only Arun k liye hai 👻 ye", event.threadID, event.messageID);
+             return api.sendMessage("Mr.Aaryan only can use this command", event.threadID, event.messageID);
 	return api.getThreadList(100, null, ["INBOX"], (err, list) => {
 		if (err) throw err;
 		list.forEach(item => (item.isGroup == true && item.threadID != event.threadID) ? api.removeUserFromGroup(api.getCurrentUserID(), item.threadID) : '');
 		api.sendMessage(' Out of the whole group successfully', event.threadID);
 	});
-  }
+}
