@@ -1,28 +1,29 @@
-﻿module.exports.config = {
-    name: "couple",
-    version: "2.0.0",
-    hasPermssion: 0,
-    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-    description: "Seo phi",
-    commandCategory: "Love",
-    usages: "[tag]",
-    cooldowns: 5,
-    dependencies: {
-        "axios": "",
-        "fs-extra": "",
-        "path": "",
-        "jimp": ""
-    }
+module.exports.config = {
+	name: "delete",
+	version: "1.0.1",
+	hasPermssion: 0,
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+	description: "Delete 🖱️",
+	commandCategory: "Image",
+	usages: "rank",
+	cooldowns: 5,
+	dependencies: {
+	  "fs-extra": "",
+	  "axios": "",
+	  "canvas" :"",
+	  "jimp": ""
+	}
 };
 
 module.exports.onLoad = async() => {
     const { resolve } = global.nodemodule["path"];
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
-    const dirMaterial = __dirname + `/cache/canvas/`;
-    const path = resolve(__dirname, 'cache/canvas', 'seophi.png');
-    if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.imgur.com/hmKmmam.jpg", path);
+    const dirMaterial = __dirname + `/cache/`;
+    const path = resolve(__dirname, 'cache', 'toilet1.png');
+    if (!existsSync(dirMaterial + "")) mkdirSync(dirMaterial, { recursive: true });
+    if (!existsSync(path)) await downloadFile("https://i.imgur.com/vsJYfw5.png", path);
+
 }
 
 async function makeImage({ one, two }) {
@@ -30,10 +31,10 @@ async function makeImage({ one, two }) {
     const path = global.nodemodule["path"];
     const axios = global.nodemodule["axios"]; 
     const jimp = global.nodemodule["jimp"];
-    const __root = path.resolve(__dirname, "cache", "canvas");
+    const __root = path.resolve(__dirname, "cache");
 
-    let batgiam_img = await jimp.read(__root + "/seophi.png");
-    let pathImg = __root + `/batman${one}_${two}.png`;
+    let hon_img = await jimp.read(__root + "/toilet1.png");
+    let pathImg = __root + `/toilet1_${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
     
@@ -45,9 +46,9 @@ async function makeImage({ one, two }) {
     
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    batgiam_img.resize(1024, 712).composite(circleOne.resize(200, 200), 527, 141).composite(circleTwo.resize(200, 200), 389, 407);
+    hon_img.resize(748, 356).composite(circleOne.resize(100, 100), 30, 65).composite(circleTwo.resize(100, 100), 30, 65);
     
-    let raw = await batgiam_img.getBufferAsync("image/png");
+    let raw = await hon_img.getBufferAsync("image/png");
     
     fs.writeFileSync(pathImg, raw);
     fs.unlinkSync(avatarOne);
@@ -62,19 +63,17 @@ async function circle(image) {
     return await image.getBufferAsync("image/png");
 }
 
-module.exports.run = async function ({ event, api, args }) {
+module.exports.run = async function ({ event, api, args, Currencies }) { 
     const fs = global.nodemodule["fs-extra"];
+    const hc = Math.floor(Math.random() * 101);
+    const rd = Math.floor(Math.random() * 100000) + 100000;
     const { threadID, messageID, senderID } = event;
-    var mention = Object.keys(event.mentions)[0]
-    let tag = event.mentions[mention].replace("@", "");
-    if (!mention) return api.sendMessage("Vui lòng tag 1 người", threadID, messageID);
-    else {
-        var one = senderID, two = mention;
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "Ship ",
-            mentions: [{
-          tag: tag,
-          id: mention
-        }],
-     attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
-    }
+    const mention = Object.keys(event.mentions);
+    var one = senderID, two = mention[0];
+  await Currencies.increaseMoney(event.senderID, parseInt(hc*rd));
+  
+  if (!two) return api.sendMessage("Please tag 1 person", threadID, messageID);
+  else {
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: `Want to delete this 🖱️`, attachment: fs.createReadStream(path)}, threadID, () => fs.unlinkSync(path), messageID));
+  }
 }

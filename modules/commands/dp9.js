@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "dp",
+  name: "dp9",
   version: "1.0.0",
   hasPermssion: 0,
   credits: "Mr AMAN",
@@ -48,7 +48,7 @@ module.exports.run = async function ({ api, event, args, Users }) {
   let pathImg = __dirname + `/cache/drake.png`;
   const text = args.join(" ").trim().replace(/\s+/g, " ").replace(/(\s+\=)/g, "+").replace(/\|\s+/g, "+").split("+");
   let getImage = (
-    await axios.get(encodeURI(`https://i.imgur.com/uFUP2y3.jpeg`), {
+    await axios.get(encodeURI(`https://i.imgur.com/fMU2Leq.jpeg`), {
       responseType: "arraybuffer",
     })
   ).data;
@@ -69,8 +69,8 @@ if(!fs.existsSync(__dirname+'/cache/SNAZZYSURGE.ttf')) {
   ctx.textAlign = "small";
   const line = await this.wrapText(ctx, text[0], 400);
   const lines = await this.wrapText(ctx, text[1], 440);
-  ctx.fillText(line.join("\n"), 120, 500)
-  ctx.fillText(lines.join("\n"), 460, 563)
+  ctx.fillText(line.join("\n"), 510, 397)
+  ctx.fillText(lines.join("\n"), 20, 530)
   ctx.beginPath();
   const imageBuffer = canvas.toBuffer();
   fs.writeFileSync(pathImg, imageBuffer);

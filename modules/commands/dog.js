@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "dog",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "VDT&NTH",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "Xem Boss",
 	commandCategory: "Picture",
 	usages: "dog [Text]",

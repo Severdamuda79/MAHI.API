@@ -1,11 +1,11 @@
-﻿module.exports.config = {
-    name: "couple",
+module.exports.config = {
+    name: "date2",
     version: "2.0.0",
     hasPermssion: 0,
     credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-    description: "Seo phi",
+    description: "Mention your partner",
     commandCategory: "Love",
-    usages: "[tag]",
+    usages: "[@mention]",
     cooldowns: 5,
     dependencies: {
         "axios": "",
@@ -20,9 +20,9 @@ module.exports.onLoad = async() => {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/cache/canvas/`;
-    const path = resolve(__dirname, 'cache/canvas', 'seophi.png');
+    const path = resolve(__dirname, 'cache/canvas', 'joshua.png');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.imgur.com/hmKmmam.jpg", path);
+    if (!existsSync(path)) await downloadFile("https://i.imgur.com/ha8gxu5.jpg", path);
 }
 
 async function makeImage({ one, two }) {
@@ -32,7 +32,7 @@ async function makeImage({ one, two }) {
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "cache", "canvas");
 
-    let batgiam_img = await jimp.read(__root + "/seophi.png");
+    let batgiam_img = await jimp.read(__root + "/joshua.png");
     let pathImg = __root + `/batman${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
@@ -45,7 +45,7 @@ async function makeImage({ one, two }) {
     
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    batgiam_img.resize(1024, 712).composite(circleOne.resize(200, 200), 527, 141).composite(circleTwo.resize(200, 200), 389, 407);
+    batgiam_img.composite(circleOne.resize(110, 110), 150, 76).composite(circleTwo.resize(100, 100), 238, 305);
     
     let raw = await batgiam_img.getBufferAsync("image/png");
     
@@ -67,14 +67,14 @@ module.exports.run = async function ({ event, api, args }) {
     const { threadID, messageID, senderID } = event;
     var mention = Object.keys(event.mentions)[0]
     let tag = event.mentions[mention].replace("@", "");
-    if (!mention) return api.sendMessage("Vui lòng tag 1 người", threadID, messageID);
+    if (!mention) return api.sendMessage("Please tag1 person", threadID, messageID);
     else {
         var one = senderID, two = mention;
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "Ship ",
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "Ship and get married >\\<",
             mentions: [{
           tag: tag,
           id: mention
         }],
      attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
     }
-}
+      }

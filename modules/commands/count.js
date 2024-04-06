@@ -3,7 +3,7 @@ module.exports.config = {
 	name: "count",
 	version: "1.8.0",
 	hasPermssion: 0,
-	credits: "Mirai Team fix get by D-Jukie",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "Check group interactions",
 	commandCategory: "Group",
 	usages: "[all/tag]",

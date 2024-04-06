@@ -1,8 +1,8 @@
 module.exports.config = {
-  name: "dp",
+  name: "dp8",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "Mr AMAN",
+  credits: "Mr Chand",
   description: "dpname maker",
   commandCategory: "dpname",
   usages: "text 1 + text 2",
@@ -48,7 +48,7 @@ module.exports.run = async function ({ api, event, args, Users }) {
   let pathImg = __dirname + `/cache/drake.png`;
   const text = args.join(" ").trim().replace(/\s+/g, " ").replace(/(\s+\=)/g, "+").replace(/\|\s+/g, "+").split("+");
   let getImage = (
-    await axios.get(encodeURI(`https://i.imgur.com/uFUP2y3.jpeg`), {
+    await axios.get(encodeURI(`https://i.imgur.com/LqMEACz.jpeg`), {
       responseType: "arraybuffer",
     })
   ).data;
@@ -64,13 +64,13 @@ if(!fs.existsSync(__dirname+'/cache/SNAZZYSURGE.ttf')) {
   Canvas.registerFont(__dirname+`/cache/SNAZZYSURGE.ttf`, {
         family: "SNAZZYSURGE"
     });
-  ctx.font = "40px SNAZZYSURGE";
-  ctx.fillStyle = "#000000";
+  ctx.font = "30px SNAZZYSURGE";
+  ctx.fillStyle = "#DF07D8";
   ctx.textAlign = "small";
   const line = await this.wrapText(ctx, text[0], 400);
   const lines = await this.wrapText(ctx, text[1], 440);
-  ctx.fillText(line.join("\n"), 120, 500)
-  ctx.fillText(lines.join("\n"), 460, 563)
+  ctx.fillText(line.join("\n"), 490, 365)
+  ctx.fillText(lines.join("\n"), 100, 365)
   ctx.beginPath();
   const imageBuffer = canvas.toBuffer();
   fs.writeFileSync(pathImg, imageBuffer);
