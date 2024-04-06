@@ -2,7 +2,7 @@
     name: "resetexp",
     version: "1.0.0",
     hasPermssion: 2,
-    credits: "Thùy",
+    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
     description: "cc del all",
     commandCategory: "System",
     usages: "[cc], [del], [all]",

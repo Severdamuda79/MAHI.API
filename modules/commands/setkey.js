@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "setkey",	
        version: "1.0.0",
 	hasPermssion: 2,
-	credits: "Loi",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "Edit api key data YouTube v3",
 	commandCategory: "admin",
 	usages: "setkey [key]",

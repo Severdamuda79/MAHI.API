@@ -2,9 +2,9 @@ module.exports.config = {
   name: "schoolid",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "Kaiden",
-  description: "enroll na mga bobo",
-  commandCategory: "Giáº£i trÃ­",
+  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+  description: "Fake School Id",
+  commandCategory: "image",
   usages: "@mention",
   dependencies: {
         "axios": "",

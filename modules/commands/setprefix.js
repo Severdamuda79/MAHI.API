@@ -2,9 +2,9 @@ module.exports.config = {
 	name: "setprefix",
 	version: "1.0.1",
 	hasPermssion: 2,
-	credits: "MirryKal",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "Reset group prefix",
-	commandCategory: "System",
+	commandCategory: "Group",
 	usages: "[prefix/reset]",
 	cooldowns: 5
 };
@@ -14,7 +14,7 @@ module.exports.languages ={
 		"successChange": "Đã chuyển đổi prefix của nhóm thành: %1",
 		"missingInput": "Phần prefix cần đặt không được để trống",
 		"resetPrefix": "Đã reset prefix về mặc định: %1",
-		"confirmChange": "Bạn có chắc bạn muốn đổi prefix của nhóm thành: %1 \n"
+		"confirmChange": "Bạn có chắc bạn muốn đổi prefix của nhóm thành: %1"
 	},
 	"en": {
 		"successChange": "Changed prefix into: %1",

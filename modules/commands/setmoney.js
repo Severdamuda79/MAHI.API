@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "setmoney",
 	version: "0.0.1",
 	hasPermssion: 2,
-	credits: "loi",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "change the amount of yourself or the person tagged",
 	commandCategory: "System",
 	usages: "setmoney [Tag]",
@@ -12,7 +12,7 @@ module.exports.config = {
 			key: 'Tag',
 			prompt: 'Leave blank or tag someone, you can tag more than one person',
 			type: 'Document',
-			example: '@Mirai-chan'
+			example: '@Priyansh'
 		}
 	]
 };

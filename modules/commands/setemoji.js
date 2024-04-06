@@ -2,8 +2,8 @@ module.exports.config = {
 	name: "setemoji",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "bao",
-	description: "Đổi emoji trong nhóm",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+	description: "Change emoji in group",
 	commandCategory: "Group",
 	usages: "setemoji [emoji]",
 	cooldowns: 3
