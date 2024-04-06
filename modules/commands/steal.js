@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "steal",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "Mirai Team",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "steal money",
 	commandCategory: "economy",
 	usages: "",

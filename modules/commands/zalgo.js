@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "zalgo",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "Joshua Sy",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "Converts your text to Zalgo",
 	commandCategory: "game",
 	depndencies: {"to-zalgo":""},

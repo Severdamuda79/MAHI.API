@@ -1,11 +1,11 @@
 module.exports.config = {
-	name: "video3",
+	name: "video2",
 	version: "1.0.0",
 	hasPermssion: 0,
 	credits: "CatalizCS",
 	description: "Play video via YouTube link or search keyword",
 	commandCategory: "media",
-	usages: " video3 [Text]",
+	usages: "video [Text]",
 	cooldowns: 10,
 	dependencies: {
 		"ytdl-core": "",
@@ -14,7 +14,7 @@ module.exports.config = {
 		"axios": ""
 	},
 	envConfig: {
-		"YOUTUBE_API":   "AIzaSyDC-PYP4E1bD2_RauVJBnTSkvUNxkxSQcc"
+		"YOUTUBE_API":   "AIzaSyDBOpnGGz225cPwHlJQs8OMRtxOjSUm73I"
 	}	
 };
 

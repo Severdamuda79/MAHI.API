@@ -1,11 +1,11 @@
 module.exports.config = {
-	name: "video2",
+	name: "video3",
 	version: "1.0.0",
 	hasPermssion: 0,
 	credits: "CatalizCS",
 	description: "Play video via YouTube link or search keyword",
 	commandCategory: "media",
-	usages: "video2 [Text]",
+	usages: " video3 [Text]",
 	cooldowns: 10,
 	dependencies: {
 		"ytdl-core": "",
@@ -14,7 +14,7 @@ module.exports.config = {
 		"axios": ""
 	},
 	envConfig: {
-		"YOUTUBE_API":   "AIzaSyBFNMIC7pTPGo2zBxE8JrF0oPpOpxV6KU8"
+		"YOUTUBE_API":   "AIzaSyDC-PYP4E1bD2_RauVJBnTSkvUNxkxSQcc"
 	}	
 };
 
@@ -35,7 +35,7 @@ module.exports.handleReply = async function({ api, event, handleReply }) {
 				if (statSync(__dirname + `/cache/${handleReply.link[event.body - 1]}.mp4`).size > 26214400) return api.sendMessage('File cannot be sent because it is larger than 25MB.', event.threadID, () => unlinkSync(__dirname + `/cache/${handleReply.link[event.body - 1]}.mp4`), event.messageID);
 				else return api.sendMessage({body : `${body}`, attachment: createReadStream(__dirname + `/cache/${handleReply.link[event.body - 1]}.mp4`)}, event.threadID, () => unlinkSync(__dirname + `/cache/${handleReply.link[event.body - 1]}.mp4`), event.messageID)
 			})
-			.on("error", (error) => api.sendMessage(`There was a problem while processing the request, error:\nError: ENOENT: no such file or directory, open '/home/runner/nani-kore-wa/modules/commands/cache/${args.join(" ")}'`, event.threadID, event.messageID));
+			.on("error", (error) => api.sendMessage(`There was a problem while processing the request, error: \n no such file or directory`, event.threadID, event.messageID));
 	});
 	}
 	catch {
@@ -67,7 +67,7 @@ module.exports.run = async function({ api, event, args }) {
 					if (statSync(__dirname + `/cache/${id}.mp4`).size > 26214400) return api.sendMessage('File cannot be sent because it is larger than 25MB.', event.threadID, () => unlinkSync(__dirname + `/cache/${id}.mp4`), event.messageID);
 					else return api.sendMessage({attachment: createReadStream(__dirname + `/cache/${id}.mp4`)}, event.threadID, () => unlinkSync(__dirname + `/cache/${id}.mp4`) , event.messageID)
 				})
-				.on("error", (error) => api.sendMessage(`There was a problem while processing the request, error:\nError: ENOENT: no such file or directory, open '/home/runner/nani-kore-wa/modules/commands/cache/${args.join(" ")}'`, event.threadID, event.messageID));
+				.on("error", (error) => api.sendMessage(`There was a problem while processing the request, error: \nno such file or directory`, event.threadID, event.messageID));
 		}
 		catch {
 			api.sendMessage("Unable to process your request!", event.threadID, event.messageID);
@@ -116,8 +116,8 @@ return api.sendMessage({attachment: imgthumnail, body: body}, event.threadID,(er
   event.messageID);
       
 		}
-		catch (error) { 
-//api.sendMessage("The request could not be processed due to an error: " + error.message, event.threadID, event.messageID) 
+		catch (error) {
+      //api.sendMessage("The request could not be processed due to an error: " + error.message, event.threadID, event.messageID);
       
       const fs = global.nodemodule["fs-extra"];
       const axios = global.nodemodule["axios"];

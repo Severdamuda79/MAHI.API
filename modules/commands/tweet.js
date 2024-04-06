@@ -1,6 +1,6 @@
 module.exports.config = {
  
-        name: "xavier",
+        name: "tweet",
  
         version: "1.0.1",
         hasPermssion: 0,
@@ -53,22 +53,22 @@ module.exports.run = async function({ api, event, args }) {
         let pathImg = __dirname + '/cache/obama.png';
         var text = args.join(" ");
         if (!text) return api.sendMessage("Enter the content of the comment on the board", threadID, messageID);
-        let getPorn = (await axios.get(`https://i.imgur.com/21xuPR1.jpg`, { responseType: 'arraybuffer' })).data;
+        let getPorn = (await axios.get(`https://imgur.com/FcbMto5.jpeg`, { responseType: 'arraybuffer' })).data;
         fs.writeFileSync(pathImg, Buffer.from(getPorn, 'utf-8'));
         let baseImage = await loadImage(pathImg);
         let canvas = createCanvas(baseImage.width, baseImage.height);
         let ctx = canvas.getContext("2d");
         ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
-        ctx.font = "320 30px Arial";
+        ctx.font = "600 70px Arial";
         ctx.fillStyle = "#000000";
         ctx.textAlign = "start";
-        let fontSize = 220;
+        let fontSize = 700;
         while (ctx.measureText(text).width > 2600) {
                 fontSize--;
-                ctx.font = `320 ${fontSize}px Arial, sans-serif`;
+                ctx.font = `350 ${fontSize}px Arial, sans-serif`;
         }
         const lines = await this.wrapText(ctx, text, 1160);
-        ctx.fillText(lines.join('\n'), 30,270);//comment
+        ctx.fillText(lines.join('\n'), 200,400);//comment
         ctx.beginPath();
         const imageBuffer = canvas.toBuffer();
         fs.writeFileSync(pathImg, imageBuffer);
