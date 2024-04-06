@@ -2,7 +2,7 @@ module.exports.config = {
     name: "fbget",
     version: "1.0.0",
     hasPermssion: 0,
-    credits: "Zera",
+    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
     description: "Download video or record from fb",
   commandCategory: "utilities",
   usages: "audio/video [link]",
@@ -34,7 +34,7 @@ return api.sendMessage({body : `Loaded success🥱`,
             const path1 = __dirname+`/cache/1.mp4`;
  let getPorn = (await axios.get(event.attachments[0].playableUrl,{ responseType:'arraybuffer'} )).data;
   fs.writeFileSync(path1, Buffer.from(getPorn, "utf-8"));
-return api.sendMessage({body : ` Loaded success🥱`, 
+return api.sendMessage({body : `Loaded success🥱`, 
     attachment: fs.createReadStream(path1)}, event.threadID, () => fs.unlinkSync(path1),event.messageID);
     }; 
   }catch {return api.sendMessage(`Unable to process the request`,event.threadID,event.messageID)}

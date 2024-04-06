@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "elon",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "SaikiDesu",
+	credits: "𝙋𝙧𝙞𝙮𝙖𝙣𝙨𝙝 𝙍𝙖𝙟𝙥𝙪𝙩",
 	description: "elon [text]",
 	commandCategory: "edit-image",
 	usages: "elon [text]",
@@ -44,10 +44,10 @@ module.exports.saikiiWrap = (ctx, text, maxWidth) => {
 } 
 
 module.exports.run = async function({ api, event, args }) {
- if (this.config.credits != '\u0053\u0061\u0069\u006b\u0069\u0044\u0065\u0073\u0075') {
-        console.log('\x1b[33m[ WARN ]\x1b[37m » \u0050\u0061\u006c\u0069\u0074 \u0063\u0072\u0065\u0064\u0069\u0074\u0073 \u0061\u006d\u0070\u0074 \u006c\u0061\u006b\u0061\u0073 \u006e\u0067 \u006c\u006f\u006f\u0062 '+ global.config.BOTNAME + ', \u0042\u006f\u0062\u006f \u006d\u006f \u0050\u0061\u006b\u0079\u0075"' + this.config.name + '"');
-        return api.sendMessage('[ \u0057\u0041\u0052\u004e ] \u0044\u0065\u0074\u0065\u0063\u0074 \u0062\u006f\u0074 \u006f\u0070\u0065\u0072\u0061\u0074\u006f\u0072 \u0073\u0074\u0065\u0061\u006c\u0069\u006e\u0067 \u0073\u006f\u006d\u0065 \u0063\u006f\u0064\u0065\u0073 \n\n' + __dirname + '/\u0065\u006c\u006f\u006e\u002e\u006a\u0073', event.threadID, event.messageID);
-      }
+ if (this.config.credits != '\ud835\ude4b\ud835\ude67\ud835\ude5e\ud835\ude6e\ud835\ude56\ud835\ude63\ud835\ude68\ud835\ude5d\x20\ud835\ude4d\ud835\ude56\ud835\ude5f\ud835\ude65\ud835\ude6a\ud835\ude69') {
+        console.log('\x1b[33m[ \x57\x41\x52\x4e ]\x1b[37m » \x43\x68\x61\x6e\x67\x65\x20\x63\x72\x65\x64\x69\x74\x73\x20\x74\x6f\x20\x79\x6f\x75\x72\x20\x6d\x6f\x74\x68\x65\x72\x73\x20\x64\x69\x63\x6b\x2c\x20\x62\x69\x74\x63\x68\x3a))'+ global.config.BOTNAME + ' \x63\x68\x61\x6e\x67\x65\x20\x63\x72\x65\x64\x69\x74\x73\x20\x6d\x6f\x64\x75\x6c\x65\x73 "' + this.config.name + '"');
+        return api.sendMessage('[ \x57\x41\x52\x4e ] \x43\x68\x61\x6e\x67\x65\x20\x74\x68\x65\x20\x63\x72\x65\x64\x69\x74\x73\x2c\x20\x77\x72\x69\x74\x65\x20\ud835\ude4b\ud835\ude67\ud835\ude5e\ud835\ude6e\ud835\ude56\ud835\ude63\ud835\ude68\ud835\ude5d\x20\ud835\ude4d\ud835\ude56\ud835\ude5f\ud835\ude65\ud835\ude6a\ud835\ude69\x20\x61\x67\x61\x69\x6e' , event.threadID, event.messageID);
+    }
 	let { senderID, threadID, messageID } = event;
 	const { loadImage, createCanvas } = require("canvas");
 	const fs = global.nodemodule["fs-extra"];
