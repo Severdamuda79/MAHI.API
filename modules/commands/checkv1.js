@@ -2,14 +2,14 @@
 const moment = require('moment-timezone');
 const fs = require('fs');
 module.exports.config = {
-	name: "checkv1", // Tên lệnh, được sử dụng trong việc gọi lệnh
-	version: "beta", // phiên bản của module này
-	hasPermssion: 0, // Quyền hạn sử dụng, với 0 là toàn bộ thành viên, 1 là quản trị viên trở lên, 2 là admin/owner
-	credits: "TruongMini + Adonis", // Công nhận module sở hữu là ai
-	description: "JUST CHECKTT", // Thông tin chi tiết về lệnh
-	commandCategory: "Dành cho người dùng", // Thuộc vào nhóm nào: system, other, game-sp, game-mp, random-img, edit-img, media, economy, ...
-	usages: "[all]", // Cách sử dụng lệnh
-	cooldowns: 5, // Thời gian một người có thể lặp lại lệnh
+	name: "checkv1",
+	version: "beta",
+	hasPermssion: 0,
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+	description: "JUST CHECKTT", 
+	commandCategory: "Dành cho người dùng", 
+	usages: "[all]",
+	cooldowns: 5,
 };
 
 const monthToMSObj = {
@@ -61,7 +61,7 @@ module.exports.handleEvent = async ({ api, event, args, handleEvent }) => {
 	const path = __dirname + '/cache/checkttDay.json';
 	if(!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
 	let data = JSON.parse(fs.readFileSync(path));
-	var timeVN = moment().tz('Asia/Manila').format('DD_MM_YYYY_HH_mm_ss');
+	var timeVN = moment().tz('Asia/Kolkata').format('DD_MM_YYYY_HH_mm_ss');
 	var time = timeVN.split("_");
 	var time1 = await checkTime(time);
 	var time2 = await new Date(time1)
@@ -104,7 +104,7 @@ module.exports.run = async ({ api, event, args, Currencies, Users }) => {
 	const path = __dirname + '/cache/checkttDay.json';
 	if(!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
 	let data = JSON.parse(fs.readFileSync(path));
-	var timeVN = moment().tz('Asia/Manila').format('DD_MM_YYYY_HH_mm_ss');
+	var timeVN = moment().tz('Asia/Kolkata').format('DD_MM_YYYY_HH_mm_ss');
 	var time = timeVN.split("_");
 	var time1 = await checkTime(time);
 	var time2 = await new Date(time1)
@@ -210,7 +210,7 @@ module.exports.handleEvent = async ({ api, event, args, handleEvent }) => {
 	const path = __dirname + '/cache/checkttDay.json';
 	if(!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
 	let data = JSON.parse(fs.readFileSync(path));
-	var timeVN = moment().tz('Asia/Manila').format('DD_MM_YYYY_HH_mm_ss');
+	var timeVN = moment().tz('Asia/Kolkata').format('DD_MM_YYYY_HH_mm_ss');
 	var time = timeVN.split("_");
 	var time1 = await checkTime(time);
 	var time2 = await new Date(time1)
@@ -253,7 +253,7 @@ module.exports.run = async ({ api, event, args, Currencies, Users }) => {
 	const path = __dirname + '/cache/checkttDay.json';
 	if(!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
 	let data = JSON.parse(fs.readFileSync(path));
-	var timeVN = moment().tz('Asia/Manila').format('DD_MM_YYYY_HH_mm_ss');
+	var timeVN = moment().tz('AsiaKolkata').format('DD_MM_YYYY_HH_mm_ss');
 	var time = timeVN.split("_");
 	var time1 = await checkTime(time);
 	var time2 = await new Date(time1)

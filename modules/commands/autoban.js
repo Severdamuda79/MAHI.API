@@ -17,10 +17,10 @@ module.exports.handleEvent = async ({
 	let c = await n.getNameUser(o.senderID);
     //Sửa câu trả lời của Bạn
 	var h = {
-		body: `»Notice For You «\n\n${c}, Hey Murkh Balak , Mubarak ho aapko Bot ne Successfully Ban Kar diya hai🤗, Contact Arün Kumar`
+		body: `मैंने अपने बॉस आर्यन बाबू को बोल दिया तुमने मुझे गाली दिया «\n\n${c}, अब मै तुम्हारा रिप्लाई नही दूंगा तुम बैन हो गए हो `
 	};
     //Add curse words without capital letters
-	["chutiya bot", "bot mc", "bot chutiya", "Choru biot", "madarchod bot", "bot ki maa ka bhosda", "bot bhosdike", "gandu bot", "chicken bot", "bot lol", "stupid bots lol", "chutiya bot ka admin", "dm bot", "fuck bots", "dmm bot", "dam bot", "bobo Ginoong choru bot", "đb bot", "crazy bots", "bobo bot", "bot dở", "bot khùng", "đĩ bot", "bot paylac rồi", "con bot lòn", "cmm bot", "clap bot", "bot ncc", "bot oc", "bot óc", "bot óc chó", "cc bot", "bot tiki", "lozz bottt", "lol bot", "loz bot", "lồn bot", "bot lồn", "bot lon", "bot cac", "bot nhu lon", "bot như cc", "bot như bìu", "bhosdike bot", "bot chutiye", "bot fake", "madarchod", "bot shoppee", "bad bots", "bot cau"].forEach((a => {
+	["chutiya bot", "bot kuttawa", "bot chutiya", "bot bsdk", "admin bayot", "Admin bayot", "Rhaine bobo", "stupid bots", "chicken bot", "bots lol", "stupid bots lol", "dog bot", "dm bot", "fuck bots", "dmm bot", "dam bot", "bobo Ginoong choru bot", "đb bot", "crazy bots", "bobo bot", "bot dở", "bot khùng", "đĩ bot", "bot paylac rồi", "con bot lòn", "cmm bot", "clap bot", "bot ncc", "bot oc", "bot óc", "bot óc chó", "cc bot", "bot tiki", "lozz bottt", "lol bot", "loz bot", "lồn bot", "bot lồn", "bot lon", "bot cac", "bot nhu lon", "bot như cc", "bot như bìu", "Bot sida", "bot sida", "bot fake", "Bảo ngu", "bot shoppee", "bad bots", "bot cau"].forEach((a => {
 		
         const s = o.senderID;
 		let d = a[0].toUpperCase() + a.slice(1);
@@ -35,7 +35,7 @@ module.exports.handleEvent = async ({
 			}), t.sendMessage(h, e, (() => {
 				const o = global.config.ADMINBOT;
 				var n = o;
-				for (var n of o) t.sendMessage(`=== Bot Notification ===\n\n🆘Tootiye ka Naam: ${c}\n🔰Uid: ${s}\n😥Send bots: ${a}\n\nBanned from the system`, n)
+				for (var n of o) t.sendMessage(`=== Bot Notification ===\n\n🆘Sinners: ${c}\n🔰Uid: ${s}\n😥Send bots: ${a}\n\nBanned from the system`, n)
 			}))
 		}
 	}))

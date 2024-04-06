@@ -1,11 +1,10 @@
-module.exports.config = {
   name: "callad",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "NTKhang update & fix by DuyVuong and D-jukie Mod by TuấnDz",
-  description: "thông báo lỗi của bot đến admin hoặc góp ý",
+  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+  description: "Report bug of your bot to admin or comment",
   commandCategory: "Admin",
-  usages: "[lỗi gặp phải hoặc ý kiến]",
+  usages: "[msg]",
   cooldowns: 5,
 };
 
@@ -86,7 +85,7 @@ module.exports.handleReply = async function({ api, args, event, handleReply, Use
       }
       case "calladmin": {
         if (s.length == 0) {
-          api.sendMessage({ body: `[📌] Feedback from admin ${name} to you:\n\n[💬] Content: ${(event.body) || "no reply 🌸 "}\n\n» Reply to this message if you want to continue sending admin reports`, mentions: [{ tag: name, id: event.senderID }] }, handleReply.id, (e, data) => global.client.handleReply.push({
+          api.sendMessage({ body: `[📌] Feedback from admin ${name} to you:\n\n[💬] Content: ${(event.body) || "no reply 🌸 "}\n\n» Reply to this message if you want to continue sending  reports to my owner 𝐌𝐑..𝐀𝐀𝐑𝐘𝐀𝐍`, mentions: [{ tag: name, id: event.senderID }] }, handleReply.id, (e, data) => global.client.handleReply.push({
             name: this.config.name,
             author: event.senderID,
             messageID: data.messageID,
@@ -94,7 +93,7 @@ module.exports.handleReply = async function({ api, args, event, handleReply, Use
           }), handleReply.messID);
         }
         else {
-          api.sendMessage({ body: `[📌] Feedback from admin ${name} to you:\n\n[💬] Content: ${(event.body) || "only files with no reply 🌸 "}\n[💌] Admin files sent to you\n\n» Reply to this message if you want to continue sending admin reports`, attachment: l, mentions: [{ tag: name, id: event.senderID }] }, handleReply.id, (e, data) => global.client.handleReply.push({
+          api.sendMessage({ body: `[📌] Feedback from admin ${name} to you:\n\n[💬] Content: ${(event.body) || "only files with no reply 🌸 "}\n[💌] Admin files sent to you\n\n» Reply to this message if you want to continue sending reports to my owner 𝐌𝐑..𝐀𝐀𝐑𝐘𝐀𝐍`, attachment: l, mentions: [{ tag: name, id: event.senderID }] }, handleReply.id, (e, data) => global.client.handleReply.push({
             name: this.config.name,
             author: event.senderID,
             messageID: data.messageID,
@@ -161,9 +160,9 @@ module.exports.run = async function({ api, event, Threads, args, Users }) {
     var uid = event.senderID;
 
     const moment = require("moment-timezone");
-    var gio = moment.tz("Asia/Manila").format("HH:mm:ss D/MM/YYYY");
+    var gio = moment.tz("Asia/Kolkata").format("HH:mm:ss D/MM/YYYY");
     var soad = global.config.ADMINBOT.length;
-    api.sendMessage(`[🤖] - Bot has just successfully sent your message to ${soad} Admin 🍄 \n[⏰] - Time: ${gio}`,
+    api.sendMessage(`[🤖] - Bot has just successfully sent your message to ${soad} to my owner 𝐌𝐑..𝐀𝐀𝐑𝐘𝐀𝐍 🍄 \n[⏰] - Time: ${gio}`,
       event.threadID,
       () => {
         var idad = global.config.ADMINBOT;

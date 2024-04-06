@@ -1,12 +1,12 @@
 module.exports.config = {
-    name: "arrest",
+    name: "batslap",
     version: "2.0.0",
     hasPermssion: 0,
-    credits: "Mr Chand",
-    description: "Arrrest a friend you mention",
-    commandCategory: "image",
-    usages: "[mention]",
-    cooldowns: 2,
+    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+    description: "",
+    commandCategory: "general",
+    usages: "[tag]",
+    cooldowns: 5,
     dependencies: {
         "axios": "",
         "fs-extra": "",
@@ -20,9 +20,8 @@ module.exports.onLoad = async() => {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/cache/canvas/`;
-    const path = resolve(__dirname, 'cache/canvas', 'batgiam.png');
+    const path = resolve(__dirname, 'cache/canvas', 'batmanslap.jpg');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.imgur.com/ep1gG3r.png", path);
 }
 
 async function makeImage({ one, two }) {
@@ -32,12 +31,12 @@ async function makeImage({ one, two }) {
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "cache", "canvas");
 
-    let batgiam_img = await jimp.read(__root + "/batgiam.png");
-    let pathImg = __root + `/batgiam_${one}_${two}.png`;
+    let tromcho_img = await jimp.read(__root + "/batmanslap.jpg");
+    let pathImg = __root + `/tromcho_${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
     
-       let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
+    let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-8'));
     
     let getAvatarTwo = (await axios.get(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
@@ -45,9 +44,9 @@ async function makeImage({ one, two }) {
     
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    batgiam_img.resize(500, 500).composite(circleOne.resize(100, 100), 375, 9).composite(circleTwo.resize(100, 100), 160, 92);
+    tromcho_img.composite(circleOne.resize(160, 180), 370, 70).composite(circleTwo.resize(230, 250), 140, 150);
     
-    let raw = await batgiam_img.getBufferAsync("image/png");
+    let raw = await tromcho_img.getBufferAsync("image/png");
     
     fs.writeFileSync(pathImg, raw);
     fs.unlinkSync(avatarOne);
@@ -67,10 +66,10 @@ module.exports.run = async function ({ event, api, args }) {
     const { threadID, messageID, senderID } = event;
     var mention = Object.keys(event.mentions)[0]
     let tag = event.mentions[mention].replace("@", "");
-    if (!mention) return api.sendMessage("Please mention 1 Person", threadID, messageID);
+    if (!mention) return api.sendMessage("Please tag 1 person", threadID, messageID);
     else {
         var one = senderID, two = mention;
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "Congratulations on entering the state payroll " + tag + '\n Wish you happy',
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "shutup dude! " + tag ,
             mentions: [{
           tag: tag,
           id: mention

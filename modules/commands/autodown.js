@@ -6,7 +6,7 @@ module.exports.config = {
     hasPermssion: 0,
     credits: "Niiozic",
     description: "Automatically download photos/videos in groups",
-    commandCategory: "media",
+    commandCategory: "No prefix",
     usages: "autodown",
     cooldowns: 5
 }

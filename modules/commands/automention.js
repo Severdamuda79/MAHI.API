@@ -4,7 +4,7 @@ module.exports.config = {
 	hasPermssion: 0,
 	credits: "to the owner",
 	description: "automent [mentioned]",
-	commandCategory: "Tools",
+	commandCategory: "other",
 	cooldowns: 5
 };
 
