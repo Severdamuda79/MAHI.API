@@ -2,15 +2,15 @@ module.exports.config = {
 	name: "approve",
 	version: "1.0.2",
 	hasPermssion: 2,
-	credits: "DungUwU mod by Nam",
+	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "approve the gc using bots xD",
 	commandCategory: "Admin",
     cooldowns: 5
 };
 
 
-const dataPath = __dirname + "/cache/approvedThreads.json";
-const dataPending = __dirname + "/cache/pendingdThreads.json";
+const dataPath = __dirname + "/Priyanshu/approvedThreads.json";
+const dataPending = __dirname + "/Priyanshu/pendingdThreads.json";
 const fs = require("fs");
 
 module.exports.onLoad = () => {
@@ -99,25 +99,24 @@ module.exports.run = async ({ event, api, args, Threads, handleReply, Users }) =
     	}, messageID)
     }
     else if (isNaN(parseInt(idBox))) api.sendMessage("[ ERR ] The ID you entered is not valid", threadID, messageID);
-    else if (data.includes(idBox)) api.sendMessage(`[ - ] ID ${idBox} Ye Group Pehle se-approved Hai!`, threadID, messageID);
-   	else api.sendMessage("[ OK ] ✨ApKa Group Approved Kar Diya Hai🙌.\n\n 🖤So Enjoy\n\n 💝🥀𝐎𝐖𝐍𝐄𝐑:- ☞Arun Kumar☜ 💫\n\n 🖤 〠🖤\n\n😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ https://www.facebook.com/Arun.x76\n\n👋For Any Kind Of Help Contact On insta  Username 👉 @Arunkumar_031 and enjoy 😍", idBox, (error, info) => {
+    else if (data.includes(idBox)) api.sendMessage(`[ - ] ID ${idBox} pre-approved!`, threadID, messageID);
+   	else api.sendMessage("[ OK ] ✨ApKa Group Approved Kar Diya Hai🙌.\n 🖤So Enjoy\n\n ༻𝐎𝐖𝐍𝐄𝐑:- ☞𝐌⃞ʀ ‣⃟ ⃝𑁍 ⃝𝐀𝐛𝐝𝐮𝐥圓‣⃟𑁍🩷🪽☜ ༺ ༒𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 〠𒁍⃝𓆩٭Ɱr. 𝐀𝐛𝐝𝐮𝐥🥀💌٭𓆪᭄〠.༒ ༒𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝༒:- ☞ https://www.facebook.com/MeiN.SabKa.MeRa.Koi.Nhi.Abdul?mibextid=ZbWKwL ☜ ֎𝘍𝘰𝘳 𝘈𝘯𝘺 𝘒𝘪𝘯𝘥 𝘖𝘧 𝘏𝘦𝘭𝘱 :- Contact On instagram  Username 👉  ", idBox, (error, info) => {
    		api.changeNickname(` 〖 ${global.config.PREFIX} 〗 ➺ ${(!global.config.BOTNAME) ? "" : global.config.BOTNAME}`, idBox, global.data.botID);
       const axios = require('axios');
 	const request = require('request');
 	const fs = require("fs");
-   let admID = "100040426712109";    
+   let admID = "100008856038379";    
   
       api.getUserInfo(parseInt(admID), (err, data) => {
       if(err){ return console.log(err)}
      var obj = Object.keys(data);
     var firstname = data[obj].name.replace("@", "");  
       
-      axios.get('https://anime-api.priyanshu91.repl.co/img/anime').then(res => {
+      axios.get('https://anime.apibypriyansh.repl.co/img/anime').then(res => {
 	let ext = res.data.url.substring(res.data.url.lastIndexOf(".") + 1);
 	let callback = function () {
       api.sendMessage({body: `❒❒ BOT ARE NOW CONNECTED ❒❒\n=====================\n┏━━━━ 🖤 ━━━━┓
-  ✦❥⋆Made By Arun
- ✦ 
+  ✦❥⋆⃝𝐌𝐑..𝐀𝐀𝐁𝐃𝐔𝐋 ✦ 
 ┗━━━    🖤 ━━━━┛\n=====================\n➪ BOT: ${global.config.BOTNAME}\n➪ Prefix: ${global.config.PREFIX}\n➪ Users: ${global.data.allUserID.length}\n➪ Groups: ${global.data.allThreadID.length}\n=====================\n[]---------------------------------------[]\nUse '${global.config.PREFIX}Help' T0o View The Commands That Available!(ღ˘⌣˘ღ)\n[]---------------------------------------[]\n⌨ Made by: ${firstname}\n`, mentions: [{
                            tag: firstname,
                            id: admID,

@@ -1,11 +1,11 @@
 module.exports.config = {
-  name: "acp",
+  name: "accept",
   version: "1.0.0",
   hasPermssion: 2,
-  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-  description: "Make friends via Facebook id",
-  commandCategory: "bot id",
-  usages: "uid",
+  credits: "NTKhang",
+  description: "Make friends with your Facebook ID",
+  commandCategory: "System",
+  usages: "< UID >",
   cooldowns: 0
 };
 
@@ -40,7 +40,7 @@ module.exports.handleReply = async ({ handleReply, event, api }) => {
     form.fb_api_req_friendly_name = "FriendingCometFriendRequestDeleteMutation";
     form.doc_id = "4108254489275063";
   }
-  else return api.sendMessage("Please choose <add | del > <numerical order | or \"all\">", event.threadID, event.messageID);
+  else return api.sendMessage("Please select < add/del > + sequence number or < all >", event.threadID, event.messageID);
   let targetIDs = args.slice(1);
   
   if (args[1] == "all") {
@@ -55,7 +55,7 @@ module.exports.handleReply = async ({ handleReply, event, api }) => {
   for (const stt of targetIDs) {
     const u = listRequest[parseInt(stt) - 1];
     if (!u) {
-      failed.push(`stt not found ${stt} in the list`);
+      failed.push(`No sequence number found ${stt} in the list`);
       continue;
     }
     form.variables.input.friend_requester_id = u.node.id;
@@ -77,7 +77,7 @@ module.exports.handleReply = async ({ handleReply, event, api }) => {
     }
   }
   
-  api.sendMessage(`» Đã ${args[0] == 'add' ? 'accept' : 'erase'} successful friend request of ${success.length} People:\n${success.join("\n")}${failed.length > 0 ? `\n» Fail with ${failed.length} People: ${failed.join("\n")}` : ""}`, event.threadID, event.messageID);
+  api.sendMessage(`Successful ${args[0] == 'add' ? 'accept' : 'erase'} Successful friend requests by ${success.length} person:\n${success.join("\n")}${failed.length > 0 ? `\n→ Failure with ${failed.length} person: ${failed.join("\n")}` : ""}`, event.threadID, event.messageID);
 };
 
 
@@ -96,11 +96,11 @@ module.exports.run = async ({ event, api }) => {
   for (const user of listRequest) {
     i++;
     msg += (`\n${i}. Name: ${user.node.name}`
-         + `\nID: ${user.node.id}`
-         + `\nUrl: ${user.node.url.replace("www.facebook", "fb")}`
-         + `\nTime: ${moment(user.time*1009).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}\n`);
+         + `\n📔 𝗜𝗗: ${user.node.id}`
+         + `\n🌐 𝗨𝗥𝗟: ${user.node.url.replace("www.facebook", "fb")}`
+         + `\n⏰ Time: ${moment(user.time*1009).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}\n`);
   }
-  api.sendMessage(`${msg}\nReply to this message with content: <add | del> <numerical order | or \"all\"> to take action`, event.threadID, (e, info) => {
+  api.sendMessage(`${msg}\n📌 Reply to this message with content: < 𝗮𝗱𝗱/𝗱𝗲𝗹 > + sequence number or < 𝗮𝗹𝗹 > If you want to do it `, event.threadID, (e, info) => {
       global.client.handleReply.push({
         name: this. config. name,
         messageID: info.messageID,
