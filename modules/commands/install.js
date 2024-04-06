@@ -1,8 +1,8 @@
 module.exports.config = {
-  name: "install",
+  name: "playstore",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "Clarence DK",
+  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
   description: "",
   commandCategory: "User",
   usages: "",
@@ -67,6 +67,13 @@ module.exports.run = async function ({ args, Users, Threads, api, event, Currenc
     )
   ).data;
   fs.writeFileSync(pathAvt1, Buffer.from(getAvtmot, "utf-8"));
+ 
+  let getbackground = (
+    await axios.get(`${rd}`, {
+      responseType: "arraybuffer",
+    })
+  ).data;
+  fs.writeFileSync(pathImg, Buffer.from(getbackground, "utf-8"));
  
   let baseImage = await loadImage(pathImg);
   let baseAvt1 = await loadImage(pathAvt1);

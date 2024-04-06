@@ -1,26 +1,19 @@
- module.exports.config = {
+module.exports.config = {
 	name: "help",
 	version: "1.0.2",
 	hasPermssion: 0,
-	credits: "PetterSever",
-	description: "Beginner's Guide",
+	credits: "MR AARYAN",
+	description: "FREE SET-UP MESSENGER ON YOUTUBE",
 	commandCategory: "system",
-	usages: "[Tên module]",
-	cooldowns: 1,
+	usages: "[Name module]",
+	cooldowns: 5,
 	envConfig: {
 		autoUnsend: true,
-		delayUnsend: 300
+		delayUnsend: 20
 	}
 };
 
 module.exports.languages = {
-	//"vi": {
-	//	"moduleInfo": "「 %1 」\n%2\n\n❯ Cách sử dụng: %3\n❯ Thuộc nhóm: %4\n❯ Thời gian chờ: %5 giây(s)\n❯ Quyền hạn: %6\n\n» Module code by %7 «",
-	//	"helpList": '[ Hiện tại đang có %1 lệnh có thể sử dụng trên bot này, Sử dụng: "%2help nameCommand" để xem chi tiết cách sử dụng! ]"',
-	//	"user": "Người dùng",
-  //      "adminGroup": "Quản trị viên nhóm",
-  //      "adminBot": "Quản trị viên bot"
-//	},
 	"en": {
 		"moduleInfo": "「 %1 」\n%2\n\n❯ Usage: %3\n❯ Category: %4\n❯ Waiting time: %5 seconds(s)\n❯ Permission: %6\n\n» Module code by %7 «",
 		"helpList": '[ There are %1 commands on this bot, Use: "%2help nameCommand" to know how to use! ]',
@@ -34,7 +27,7 @@ module.exports.handleEvent = function ({ api, event, getText }) {
 	const { commands } = global.client;
 	const { threadID, messageID, body } = event;
 
-	if (!body || typeof body == "undefined" || body.indexOf("help") != 0) return;
+	if (!body || typeof body == "cmd" || body.indexOf("help") != 0) return;
 	const splitBody = body.slice(body.indexOf("help")).trim().split(/\s+/);
 	if (splitBody.length == 1 || !commands.has(splitBody[1].toLowerCase())) return;
 	const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
@@ -55,12 +48,10 @@ module.exports. run = function({ api, event, args, getText }) {
 		const arrayInfo = [];
 		const page = parseInt(args[0]) || 1;
     const numberOfOnePage = 10;
-    //*số thứ tự 1 2 3.....cú pháp ${++i}*//
     let i = 0;
-    let msg = "";
+    let msg = "╭────────╮\n👉🏻 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧 👈🏻\n╰────────╯\n🌝▬▬▬▬▬▬▬▬▬▬▬▬🌝\n";
     
     for (var [name, value] of (commands)) {
-      name += ``;
       arrayInfo.push(name);
     }
 
@@ -69,20 +60,16 @@ module.exports. run = function({ api, event, args, getText }) {
     const startSlice = numberOfOnePage*page - numberOfOnePage;
     i = startSlice;
     const returnArray = arrayInfo.slice(startSlice, startSlice + numberOfOnePage);
-    
-    for (let item of returnArray) msg += `「 ${++i} 」${prefix}${item}\n`;
-    
-    
-    const siu = `Page Cmds\n󰂆 󰟯 󰟰 󰟷 󰟺 󰟵 󰟫`;
-    
- const text = `\nPage (${page}/${Math.ceil(arrayInfo.length/numberOfOnePage)})\n`;
- 
-    return api.sendMessage(siu + "\n\n" + msg  + text, threadID, async (error, info) => {
+  
+    for (let item of returnArray) msg += `   ╏  ${++i} ➥ ${item}\n`;
+    const randomText = [ "hy bhy baby","g","h"];
+    const text = `🌝▬▬▬▬▬▬▬▬▬▬▬▬🌝\n╭──────╮\n✅ 𝐏𝐀𝐆𝐄   (${page}/${Math.ceil(arrayInfo.length/numberOfOnePage)})✅\n╰──────╯\n𝗧𝘆𝗽𝗲: °${prefix}𝗛𝗲𝗹𝗽°\n𝗧𝗼𝘁𝗮𝗹 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀: ${arrayInfo.length} \n🌝▬▬▬▬▬▬▬▬▬▬▬▬🌝\n╭────────╮\n🙈 𝗡𝗔𝗠𝗘 𝗢𝗪𝗡𝗘𝗥 🙈\n╰────────╯  \n╭──────╮\n🥵 𝐌𝐑 𝐀𝐀𝐑𝐘𝐀𝐍 🥵\n╰──────╯\n🌝▬▬▬▬▬▬▬▬▬▬▬▬🌝 \nAGAIN ON GROUP\n🌜𝐎𝐖𝐍𝐄𝐑 𝐈𝐃🌛\nhttps://www.facebook.com/Mr.Aaryan.babu\n\n🌜𝐘𝐎𝐔𝐓𝐔𝐁𝐄 𝐂𝐇𝐀𝐍𝐄𝐋🌛\nhttps://youtube.com/@aaryanaawara\n🌝▬▬▬▬▬▬▬▬▬▬▬▬🌝 \n\n╭───────╮\n🥵 𝗙𝗢𝗥 𝗛𝗔𝗧𝗘𝗥𝗦 🥵\n╰───────╯ \n      𝗙𝗘𝗘𝗟 𝗧𝗛𝗘 𝗣𝗢𝗪𝗘𝗥 𝗢𝗙 𝗠𝗥..𝗔𝗔𝗥𝗬𝗔𝗡 \n🌝▬▬▬▬▬▬▬▬▬▬▬▬🌝\n┎───────────┑\n ❘ 👑 𝐌𝐑.𝐀𝐀𝐑𝐘𝐀𝐍-𝐁𝐀𝐁𝐔-⓬ 👑❘\n┗───────────┙\n🌝▬▬▬▬▬▬▬▬▬▬▬▬🌝`;
+    return api.sendMessage(msg  + text, threadID, async (error, info) => {
 			if (autoUnsend) {
-				await new Promise(resolve => setTimeout(resolve, delayUnsend * 1000));
+				await new Promise(resolve => setTimeout(resolve, delayUnsend * 10000));
 				return api.unsendMessage(info.messageID);
 			} else return;
-		}, event.messageID);
+		});
 	}
 
 	return api.sendMessage(getText("moduleInfo", command.config.name, command.config.description, `${prefix}${command.config.name} ${(command.config.usages) ? command.config.usages : ""}`, command.config.commandCategory, command.config.cooldowns, ((command.config.hasPermssion == 0) ? getText("user") : (command.config.hasPermssion == 1) ? getText("adminGroup") : getText("adminBot")), command.config.credits), threadID, messageID);

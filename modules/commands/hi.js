@@ -2,8 +2,8 @@ module.exports.config = {
   name: "hi",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "Sam but fixed by Arun(ind time)",
-  description: "hi gửi sticker",
+  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+  description: "hi sticker",
   commandCategory: "QTV BOX",
   usages: "[text]",
   cooldowns: 5
@@ -13,17 +13,17 @@ module.exports.handleEvent = async ({ event, api, Users }) => {
   let KEY = [ 
     "hello",
     "hi",
-    "hy",
-    "hlo",
+    "hai",
+    "chào",
     "chao",
-    "👋",
+    "hí",
     "híí",
     "hì",
     "hìì",
     "lô",
     "hii",
     "helo",
-    "hiii"
+    "hê nhô"
   ];
   let thread = global.data.threadData.get(event.threadID) || {};
   if (typeof thread["hi"] == "undefined", thread["hi"] == false) return
@@ -48,14 +48,14 @@ module.exports.handleEvent = async ({ event, api, Users }) => {
     let moment = require("moment-timezone");
     let hours = moment.tz('Asia/Kolkata').format('HHmm');
     let session = (
-    hours > 0001 && hours <= 400 ? "So jao baby, Itni Raat Ko Hy hlo kAr Rahe ho🥲" : 
-    hours > 401 && hours <= 700 ? "Badi Jaldi Jaag Gye, 🙄" :
-    hours > 701 && hours <= 1000 ? "😘 Good morning baby😍😍 " :
-    hours > 1001 && hours <= 1200 ? " good morning, Nashta hua" : 
-    hours > 1201 && hours <= 1700 ? "Good Afternoon baby, Lunch Karlo😘" : 
-    hours > 1701 && hours <= 1800 ? "kese ho baby" : 
-    hours > 1801 && hours <= 2100 ? "Good evening 😘😘" : 
-    hours > 2101 && hours <= 2400 ? "how are you, dinner hua😘😘" : 
+    hours > 0001 && hours <= 400 ? "bright morning" : 
+    hours > 401 && hours <= 700 ? "morning" :
+    hours > 701 && hours <= 1000 ? "shining" :
+    hours > 1001 && hours <= 1200 ? "lunch" : 
+    hours > 1201 && hours <= 1700 ? "afternoon" : 
+    hours > 1701 && hours <= 1800 ? "gloaming" : 
+    hours > 1801 && hours <= 2100 ? "evening" : 
+    hours > 2101 && hours <= 2400 ? "late night" : 
     "error");
     let name = await Users.getNameUser(event.senderID);
     let mentions = [];
@@ -63,7 +63,7 @@ module.exports.handleEvent = async ({ event, api, Users }) => {
       tag: name,
       id: event.senderID
     })
-    let msg = {body: `💝💝Hi ${name}, ❤️❤️ ${session}`, mentions}
+    let msg = {body: `Hi ${name}, have a good ${session}`, mentions}
     api.sendMessage(msg, event.threadID, (e, info) => {
       setTimeout(() => {
         api.sendMessage({sticker: sticker}, event.threadID);

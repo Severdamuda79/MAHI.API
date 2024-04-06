@@ -2,7 +2,7 @@ module.exports.config = {
         name: "lexi",
         version: "1.0.1",
         hasPermssion: 0,
-        credits: "Kojiro",
+        credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
         description: "",
         commandCategory: "edit-img",
         usages: "lexi [text]",
