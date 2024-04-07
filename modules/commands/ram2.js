@@ -18,7 +18,7 @@ react.includes("ASSALAMU ALAIKUM") ||react.includes("🇸🇦") ||
 react.includes("Assalam alikum")) {
 		var msg = {
 				body: `【  WALIKUM ASSALAM 🇸🇦🇸🇦😍_________________❤️🇸🇦  】`,attachment: 
-fs.createReadStream(__dirname + `/noprefix/Allah.mp3`)
+fs.createReadStream(__dirname + `/noprefix/ram.mp3`)
 			}
 			api.sendMessage(msg, threadID, messageID);
     api.setMessageReaction("🇸🇦", event.messageID, (err) => {}, true)
