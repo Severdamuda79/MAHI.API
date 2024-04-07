@@ -33,7 +33,7 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
    };
 
    if ((event.body.toLowerCase() == "🚩") || (event.body.toLowerCase() == "🙏")) {
-     return api.sendMessage("जय_श्री_राम_🙏_🚩🚩_❤️", threadID);
+     return api.sendMessage("जय_श्री_राम_🙏 _🚩🚩_❤️", threadID);
    };
 
    if ((event.body.toLowerCase() == "hi") || (event.body.toLowerCase() == "hello") ||(event.body.toLowerCase() == "hlw") || (event.body.toLowerCase() == "helo")) {
