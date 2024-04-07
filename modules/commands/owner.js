@@ -20,11 +20,11 @@ const axios = global.nodemodule["axios"];
 const request = global.nodemodule["request"];
 const fs = global.nodemodule["fs-extra"];
     var link = [
-"https://i.ibb.co/jgk6rB0/7ce2390636d1a46a331662dbaaf693d6.jpg"
+"https://i.imgur.com/mxPPatY.jpeg"
      ];
      var callback = () => api.sendMessage({body:`🔰𝙊𝙒𝙉𝙀𝙍 𝙄𝙉𝙁𝙊🔰
 
-   𝐌𝐑..𝐌𝐑..𝐀𝐁𝐃𝐔𝐋 𝐁𝐀𝐁𝐔•◡•)
+   𝐌𝐑..𝐀𝐁𝐃𝐔𝐋 𝐁𝐀𝐁𝐔•◡•)
 
 𝐀𝐠𝐞 : 22
 
