@@ -12,7 +12,7 @@ module.exports.config = {
 
 module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
-	if (event.body.indexOf("SANA")==0 || event.body.indexOf("Sana")==0 || event.body.indexOf("sana Shaikh")==0 || event.body.indexOf(".@sana Shaikh")==0) {
+	if (event.body.indexOf("SANA")==0 || event.body.indexOf("Sana")==0 || event.body.indexOf("Sana Shaikh")==0 || event.body.indexOf(".@Sana Shaikh")==0) {
 		var msg = {
 				body: "💝 YE  HSI SANA ABDUL KI BESTIE 🧀\n\n(-𝐌𝐚𝐝𝐞 𝐁𝐲 𝐌𝐑..𝐀𝐁𝐃𝐔𝐋❤️-)",
 				attachment: 
